@@ -16,7 +16,7 @@ const BlogIndex = ({ data }, location) => {
   let postCounter = 0
 
   return (
-    <Layout title={siteTitle}>
+    <Layout title={siteTitle} location={location}>
       <SEO title="Michael Matsoukas" keywords={[`fashion`, `photography`]} />
       {/* <Bio /> */}
       {data.site.siteMetadata.description && (
@@ -28,9 +28,6 @@ const BlogIndex = ({ data }, location) => {
       )}
       <div className="post-feed">
         {posts.map(({ node }) => {
-          if (node.frontmatter.title === "About Me") {
-            return
-          }
           postCounter++
           return (
             <PostCard
@@ -54,7 +51,10 @@ const indexQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { title: { ne: "About Me" } } }
+    ) {
       edges {
         node {
           fields {

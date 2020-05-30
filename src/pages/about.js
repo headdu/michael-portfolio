@@ -11,12 +11,9 @@ import "../utils/css/screen.css"
 const AboutPage = ({ data }, location) => {
   const siteTitle = data.site.siteMetadata.title
 
-  const aboutMe = data.allMarkdownRemark.edges.find(
-    _ => _.node.frontmatter.title === "About Me"
-  ).node
-
+  const aboutMe = data.allMarkdownRemark.edges[0].node
   return (
-    <Layout title={siteTitle}>
+    <Layout title={siteTitle} location={location}>
       <SEO
         title="About"
         keywords={[
@@ -50,7 +47,7 @@ const indexQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(filter: { frontmatter: { title: { eq: "About Me" } } }) {
       edges {
         node {
           fields {
