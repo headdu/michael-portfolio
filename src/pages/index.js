@@ -9,7 +9,7 @@ import PostCard from "../components/postCard"
 import "../utils/normalize.css"
 import "../utils/css/screen.css"
 //TODO: switch to staticQuery, get rid of comments, remove unnecessary components, export as draft template
-const BlogIndex = ({ data }, location) => {
+const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
 
   const posts = data.allMarkdownRemark.edges

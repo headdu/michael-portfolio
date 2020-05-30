@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 
 const Layout = props => {
-  const { title, children } = props
+  const { title, children, location } = props
   const [toggleNav, setToggleNav] = React.useState(false)
   return (
     <div className={`site-wrapper ${toggleNav ? `site-head-open` : ``}`}>
@@ -28,7 +28,7 @@ const Layout = props => {
             <ul className="nav" role="menu">
               <li
                 className={`nav-home ${
-                  window.location.pathname === "/" ? "nav-current" : ""
+                  location.pathname === "/" ? "nav-current" : ""
                 }`}
                 role="menuitem"
               >
@@ -36,7 +36,7 @@ const Layout = props => {
               </li>
               <li
                 className={`nav-about ${
-                  window.location.pathname.toLowerCase().startsWith("/about")
+                  location.pathname.toLowerCase().startsWith("/about")
                     ? "nav-current"
                     : ""
                 }`}
