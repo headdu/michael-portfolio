@@ -1,7 +1,8 @@
 backend:
   name: git-gateway
   branch: master # Branch to update (optional; defaults to master)
-media_folder: "static/images"
+media_folder: static/images
+public_folder: /images
 collections:
   - name: "work" # Used in routes, e.g., /admin/collections/blog
     label: "Piece" # Used in the UI
@@ -11,4 +12,14 @@ collections:
     fields: # The fields for each document, usually in front matter
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Image", name: "Piece", widget: "image" }
+      - { label: "Image", name: "piece", widget: "image" }
+  - name: "me" # Used in routes, e.g., /admin/collections/blog
+    label: "About Me" # Used in the UI
+    folder: "static/about" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "About me", name: "about", widget: "text" }
+      - { label: "Avatar", name: "avatar", widget: "image" }
