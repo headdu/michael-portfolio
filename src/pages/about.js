@@ -34,7 +34,7 @@ const AboutPage = ({ data, location }) => {
             display: "block",
           }}
         />
-        <p style={{ whiteSpace: "pre" }}>{aboutMe.frontmatter.about}</p>
+        <p style={{ whiteSpace: "pre-wrap" }}>{aboutMe.frontmatter.about}</p>
       </section>
     </Layout>
   )
