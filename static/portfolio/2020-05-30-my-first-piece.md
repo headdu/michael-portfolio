@@ -1,5 +1,5 @@
 ---
-title: My first piece
+title: " "
 date: 2020-05-30T13:42:06.435Z
-piece: /images/woman-wearing-black-mesh-dress-3452554.jpg
+piece: /images/mm_look-8_611_0611-edit.jpg
 ---
