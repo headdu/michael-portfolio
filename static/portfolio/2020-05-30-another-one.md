@@ -1,5 +1,5 @@
 ---
-title: Another one
-date: 2020-05-30T14:40:41.969Z
-piece: /images/woman-in-black-shirt-and-red-jacket-4026110.jpg
+title: " "
+date: 2020-05-31T15:08:59.052Z
+piece: /images/©michaelmatsoukas-7-.jpg
 ---
