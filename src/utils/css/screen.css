@@ -414,10 +414,14 @@ body {
     margin: 2vw 0;
     background-size: 100%;
     background-repeat: no-repeat;
+    background-position-x: left;
+    background-position-y: top;
   }
   .post-card-large {
     height: 63vw;
     background-size: 100%;
+    background-position-x: left;
+    background-position-y: top;
   }
 }
 
@@ -430,8 +434,20 @@ body {
     height: 120vw;
   }
 
-  #swup > div > article:nth-child(9) {
+  #swup > div > article:nth-child(15) {
     height: 120vw;
+  }
+
+  #swup > div > article:nth-child(1) {
+    height: 110vw;
+  }
+
+  #swup > div > article:nth-child(2) {
+    height: 110vw;
+  }
+
+  #swup > div > article:nth-child(3) {
+    height: 55vw;
   }
 }
 
